@@ -12,12 +12,14 @@ var TableHeadItem = function TableHeadItem(_ref) {
   var item = _ref.item,
     onClick = _ref.onClick,
     sortDirection = _ref.sortDirection,
-    isSorted = _ref.isSorted;
+    isSorted = _ref.isSorted,
+    thBackgroundColor = _ref.thBackgroundColor;
   return /*#__PURE__*/_react["default"].createElement("th", {
     onClick: onClick,
     style: {
       cursor: "pointer",
-      textAlign: "left"
+      textAlign: "left",
+      backgroundColor: thBackgroundColor
     }
   }, item, isSorted && /*#__PURE__*/_react["default"].createElement(_reactFontawesome.FontAwesomeIcon, {
     icon: sortDirection === "asc" ? _freeSolidSvgIcons.faArrowUp : _freeSolidSvgIcons.faArrowDown,

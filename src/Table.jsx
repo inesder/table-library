@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import TableRow from "./TableRow";
 import TableHeadItem from "./TableHeadItem";
 
-const Table = ({ theadData, tbodyData }) => {
+const Table = ({ theadData, tbodyData, thBackgroundColor = '#04AA6D', buttonBackgroundColor = '#04AA6D'}) => {
     const [filterText, setFilterText] = useState("");
     const [sortedData, setSortedData] = useState(tbodyData);
     const [sortDirection, setSortDirection] = useState("asc");
     const [sortedColumn, setSortedColumn] = useState(null);
     const [currentPage, setCurrentPage] = useState(1); 
     const [rowsPerPage, setRowsPerPage] = useState(4);
-
+    
     const handleFilterChange = (e) => {
         setFilterText(e.target.value.toLowerCase());
     };
@@ -91,6 +91,7 @@ const Table = ({ theadData, tbodyData }) => {
                                 onClick={() => handleSort(index)}
                                 sortDirection={sortedColumn === index ? sortDirection : null}
                                 isSorted={sortedColumn === index}
+                                thBackgroundColor={thBackgroundColor}
                             />
                         ))}
                     </tr>
@@ -111,13 +112,13 @@ const Table = ({ theadData, tbodyData }) => {
             </table>
             {/* Boutons de Pagination */}
             <div className="pagination">
-                <button onClick={handlePreviousPage} disabled={currentPage === 1}>
+                <button style={{ backgroundColor: buttonBackgroundColor }} onClick={handlePreviousPage} disabled={currentPage === 1}>
                     Previous
                 </button>
                 <span>
                     Page {currentPage} of {totalPages}
                 </span>
-                <button onClick={handleNextPage} disabled={currentPage === totalPages}>
+                <button style={{ backgroundColor: buttonBackgroundColor }} onClick={handleNextPage} disabled={currentPage === totalPages}>
                     Next
                 </button>
             </div>

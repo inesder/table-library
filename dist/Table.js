@@ -23,7 +23,11 @@ function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" !=
 function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 var Table = function Table(_ref) {
   var theadData = _ref.theadData,
-    tbodyData = _ref.tbodyData;
+    tbodyData = _ref.tbodyData,
+    _ref$thBackgroundColo = _ref.thBackgroundColor,
+    thBackgroundColor = _ref$thBackgroundColo === void 0 ? '#04AA6D' : _ref$thBackgroundColo,
+    _ref$buttonBackground = _ref.buttonBackgroundColor,
+    buttonBackgroundColor = _ref$buttonBackground === void 0 ? '#04AA6D' : _ref$buttonBackground;
   var _useState = (0, _react.useState)(""),
     _useState2 = _slicedToArray(_useState, 2),
     filterText = _useState2[0],
@@ -126,7 +130,8 @@ var Table = function Table(_ref) {
         return handleSort(index);
       },
       sortDirection: sortedColumn === index ? sortDirection : null,
-      isSorted: sortedColumn === index
+      isSorted: sortedColumn === index,
+      thBackgroundColor: thBackgroundColor
     });
   }))), /*#__PURE__*/_react["default"].createElement("tbody", null, currentRows.length > 0 ? currentRows.map(function (item) {
     return /*#__PURE__*/_react["default"].createElement(_TableRow["default"], {
@@ -141,9 +146,15 @@ var Table = function Table(_ref) {
   }, "No matching employees found.")))), /*#__PURE__*/_react["default"].createElement("div", {
     className: "pagination"
   }, /*#__PURE__*/_react["default"].createElement("button", {
+    style: {
+      backgroundColor: buttonBackgroundColor
+    },
     onClick: handlePreviousPage,
     disabled: currentPage === 1
   }, "Previous"), /*#__PURE__*/_react["default"].createElement("span", null, "Page ", currentPage, " of ", totalPages), /*#__PURE__*/_react["default"].createElement("button", {
+    style: {
+      backgroundColor: buttonBackgroundColor
+    },
     onClick: handleNextPage,
     disabled: currentPage === totalPages
   }, "Next")));
