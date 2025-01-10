@@ -10,6 +10,10 @@ const Table = ({ theadData, tbodyData, thBackgroundColor = '#04AA6D', buttonBack
     const [currentPage, setCurrentPage] = useState(1); 
     const [rowsPerPage, setRowsPerPage] = useState(4);
     
+    useEffect(() => {
+        setSortedData(tbodyData);
+        setCurrentPage(1);
+      }, [tbodyData]);
     const handleFilterChange = (e) => {
         setFilterText(e.target.value.toLowerCase());
     };

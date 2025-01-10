@@ -52,6 +52,10 @@ var Table = function Table(_ref) {
     _useState12 = _slicedToArray(_useState11, 2),
     rowsPerPage = _useState12[0],
     setRowsPerPage = _useState12[1];
+  useEffect(function () {
+    setSortedData(tbodyData);
+    setCurrentPage(1);
+  }, [tbodyData]);
   var handleFilterChange = function handleFilterChange(e) {
     setFilterText(e.target.value.toLowerCase());
   };
