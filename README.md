@@ -29,6 +29,7 @@ Before using this component, ensure you have the following installed:
 - npm version 6.x or higher
 - React version 18.3.1 or higher
 - react-dom version 18.3.1 or higher
+- A suitable IDE for development (e.g., Visual Studio Code is recommended)
 
 --- 
 
