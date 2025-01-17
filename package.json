@@ -6,7 +6,7 @@
 	"scripts": {
 		"build": "babel src --out-dir dist && copyfiles -u 1 src/styles/*.css dist/"
 	},
-	"author": "",
+	"author": "Inès Derraz",
 	"license": "ISC",
 	"dependencies": {
 		"@babel/cli": "^7.26.4",
