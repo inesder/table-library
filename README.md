@@ -6,6 +6,7 @@
 
 ## Sommaire 
 
+- [Prerequisites](#prerequisites)
 - [Installation](#installation) 
 - [Usage](#usage) 
 - [Props](#props) 
@@ -19,7 +20,19 @@
 - [Contributing](#contributing) 
 - [License](#license)
 
---- ## Installation 
+--- 
+
+## Prerequisites
+
+Before using this component, ensure you have the following installed:
+- Node.js version 14.x or higher
+- npm version 6.x or higher
+- React version 18.3.1 or higher
+- react-dom version 18.3.1 or higher
+
+--- 
+
+## Installation 
 
 ```bash 
 npm install inesder-table
